@@ -8,23 +8,45 @@ class Node {
 class LinkedList {
     constructor() {
         this.headNode = null;
-        this.tailNode = null;
-    };
-
-    append(value) {
-        
+        this.length = 0;
     };
 
     prepend(value) {
+        let nextNode = null;
+        const newNode = new Node(value);
+        if (this.headNode === null) {
+            this.headNode = newNode;
+            this.headNode.nextNode = nextNode;
+            this.length++;
+            return;
+        };
+        newNode.nextNode = this.headNode;
+        this.headNode = newNode;
+        this.length++;
+    };
 
+    append(value) {
+        let nextNode = null;
+        const newNode = new Node(value);
+        if (this.headNode === null) {
+            this.headNode = newNode;
+            this.headNode.nextNode = nextNode;
+        } else {
+            let pointer = this.headNode;
+            while (pointer.nextNode !== null) {
+                pointer = pointer.nextNode;
+            };
+            pointer.nextNode = newNode;
+        };
+        this.length++;
     };
 
     size() {
-
+        return this.length;
     };
 
     head() {
-
+        return this.headNode;
     };
 
     tail() {
@@ -51,5 +73,10 @@ class LinkedList {
 
     };
 };
+
+const newList = new LinkedList();
+newList.prepend(1);
+newList.append(1);
+console.log(newList);
 
 // node app.js
