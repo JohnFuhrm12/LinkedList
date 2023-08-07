@@ -14,6 +14,42 @@ class LinkedList {
     append(value) {
         
     };
+
+    prepend(value) {
+
+    };
+
+    size() {
+
+    };
+
+    head() {
+
+    };
+
+    tail() {
+
+    };
+
+    at(index) {
+
+    };
+
+    pop() {
+
+    };
+
+    contains(value) {
+
+    };
+
+    find(value) {
+
+    };
+
+    toString() {
+
+    };
 };
 
 // node app.js
