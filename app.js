@@ -76,22 +76,46 @@ class LinkedList {
     };
 
     contains(value) {
-
+        let node = this.headNode;
+        let index = 0;
+        while (node.newNode !== null) {
+            if (node.value === value) return true;
+            node = node.nextNode;
+            index++;        
+            return false;
+        };
     };
 
     find(value) {
-
+        let node = this.headNode;
+        let index = 0;
+        while (node.newNode !== null) {
+            if (node.value === value) return index;
+            node = node.nextNode;
+            index++;        
+            return null;
+        };
     };
 
     toString() {
+        let pointer = this.headNode;
+        let result = "";
 
+        while (pointer.nextNode !== null) {
+          result = result.concat(`(${pointer.value}) --> `);
+          pointer = pointer.nextNode;
+        };
+
+        result = result.concat(`(${pointer.value})`);
+        console.log(result);
+        return result;
     };
 };
 
 const newList = new LinkedList();
 newList.prepend(1);
 newList.append(5);
-newList.pop();
-console.log(newList);
+newList.append(10);
+console.log(newList.toString());
 
 // node app.js
